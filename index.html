@@ -2573,7 +2573,7 @@
             }
             async function downloadImageUrlToBase64(imageUrl, requestUrl) {
                 const resolvedImageUrl = new URL(imageUrl, requestUrl).toString();
-                const response = await fetch(resolvedImageUrl, { signal: AbortSignal.timeout(30000) });
+                const response = await fetch(resolvedImageUrl, { signal: AbortSignal.timeout(100000) });
                 if (!response.ok) {
                     throw new Error(`图像下载失败：HTTP ${response.status} ${response.statusText}`);
                 }
